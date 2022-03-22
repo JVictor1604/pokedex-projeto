@@ -6,23 +6,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=
     , initial-scale=1.0">
-    <title>Document</title>
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     
+   <center> <h1>Página com a Pokedex</h1> </center> <br>
+
     <section>
 
-        <%= pokedex.forEach((pokemon) =>{ %>
+        
+        
+        <% pokedex.forEach((pokemon) =>{ %>
+
+            
     
-            <div>
-                <img src="<%= pokemon.imagem %>" alt="">
-                <h2>       <%= pokemon.nome %> </h2>
-                <p>        <%= pokemon.descricao %>   </p>
-                <p>        <%= pokemon.tipo %>    </p>
+        <div class="card-pokemon">
+                
+            <div class="card-top">  
+                   <h3>Id: <%= pokemon.id %> </h3>
+                   <h3>Num:   <%= pokemon.número %> </h3>
             </div>
+
+            
+
+            <div class="card-mid">    
+            
+                
+                <center> 
+                
+                    <h2>  Nome:     <%= pokemon.nome %> </h2> 
+                
+                </center>
+
+                <p
+                
+                class="text-descricao">   Descrição: <br> <br> <%= pokemon.
+                descricao %> 
+
+                </p>
+
+                <img src="<%=pokemon.imagem%>" alt="">
+            
+            </div>
+
+            <div  class="dados-center">
+
+                <span class="tipo"> <p>   Tipo:     <%= pokemon.tipo %>    </p> </span> 
+
+                <span class="altura"> <p>   Altura:     <%= pokemon.altura %>    </p> </span>
+
+                <span class="peso"> <p>   Peso:     <%= pokemon.peso %>    </p> </span>
+
+                <span class="categoria"> <p>   Categoria     <%= pokemon.categoria %>    </p> </span>
+
+                <span class="habilidade"> <p>   Habilidade:     <%= pokemon.habilidade %>    </p> </span>
+                
+
+
+            </div>
+
+        </div>
     
-         <%=}) %>
+         <% }) %>
     
         </section>
 
