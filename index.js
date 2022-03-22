@@ -1,4 +1,5 @@
 const { __express } = require("ejs");
+const { urlencoded } = require("express");
 const express = require("express");
 const path = require("path");
 const app = express();
@@ -8,8 +9,8 @@ let port = 3001;
 app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}/`));
 
 app.set("view engine", "ejs");
-
 app.use(express.static(path.join(__dirname,"public")));
+app.use(express.urlencoded());
 
 
 app.get("/", (req,res) => {
@@ -24,6 +25,16 @@ app.get("/detalhes", (req,res) => {
     res.render('detalhes.ejs', {
         pokemonAtual
     })
+});
+
+app.post("/add", (req,res) => {
+
+    const adicionarPokemon = req.body;
+
+    pokedex.push(adicionarPokemon);
+
+    res.redirect("/");
+
 });
 
 

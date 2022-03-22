@@ -11,67 +11,133 @@
 </head>
 
 <body>
+
     
-   <center> <h1>Página com a Pokedex</h1> </center> <br>
+        <h1 class="titulo"> Sua Pokedéx</h1>
+     
 
-    <section>
+    <section class="cards">
 
-        
-        
-        <% pokedex.forEach((pokemon) =>{ %>
 
-            
-    
-        <div class="card-pokemon">
-                
-            <div class="card-top">  
-                   <h3>Id: <%= pokemon.id %> </h3>
-                   <h3>Num:   <%= pokemon.número %> </h3>
+
+        <% pokedex.forEach((pokemon)=>{ %>
+
+
+
+            <div class="card-pokemon">
+
+                <div class="card-top">
+                    <h3>Id: <%= pokemon.id %>
+                    </h3>
+                    <h3>Num: <%= pokemon.número %>
+                    </h3>
+                </div>
+
+
+
+                <div class="card-mid">
+
+
+                    <center>
+
+                        <h2> Nome: <%= pokemon.nome %>
+                        </h2>
+
+                    </center>
+
+
+                    <img src="<%=pokemon.imagem%>" alt="">
+
+                    <p class="text-descricao"> Descrição: <%= pokemon. descricao %>
+
+                    </p>
+
+                </div>
+
+                <div class="dados-center">
+
+                    <span class="tipo">
+                        <p> Tipo: <%= pokemon.tipo %>
+                        </p>
+                    </span>
+
+                    <span class="altura">
+                        <p> Altura: <%= pokemon.altura %>
+                        </p>
+                    </span>
+
+                    <span class="peso">
+                        <p> Peso: <%= pokemon.peso %>
+                        </p>
+                    </span>
+
+                    <span class="categoria">
+                        <p> Categoria <%= pokemon.categoria %>
+                        </p>
+                    </span>
+
+                    <span class="habilidade">
+                        <p> Habilidade: <%= pokemon.habilidade %>
+                        </p>
+                    </span>
+
+
+
+                </div>
+
             </div>
 
-            
+            <% }) %>
 
-            <div class="card-mid">    
-            
-                
-                <center> 
-                
-                    <h2>  Nome:     <%= pokemon.nome %> </h2> 
-                
-                </center>
-
-                <p
-                
-                class="text-descricao">   Descrição: <br> <br> <%= pokemon.
-                descricao %> 
-
-                </p>
-
-                <img src="<%=pokemon.imagem%>" alt="">
-            
-            </div>
-
-            <div  class="dados-center">
-
-                <span class="tipo"> <p>   Tipo:     <%= pokemon.tipo %>    </p> </span> 
-
-                <span class="altura"> <p>   Altura:     <%= pokemon.altura %>    </p> </span>
-
-                <span class="peso"> <p>   Peso:     <%= pokemon.peso %>    </p> </span>
-
-                <span class="categoria"> <p>   Categoria     <%= pokemon.categoria %>    </p> </span>
-
-                <span class="habilidade"> <p>   Habilidade:     <%= pokemon.habilidade %>    </p> </span>
-                
+    </section>
 
 
-            </div>
+    <section id="cadastro">
 
-        </div>
-    
-         <% }) %>
-    
-        </section>
+        <h2> Cadastre seu Pokemon</h2>
+
+        <form action="/add" method="POST">
+
+            <label for="nome"> Numero: </label>
+            <input type="text" id="numero" name="numero">
+
+            <label for="nome"> Id: </label>
+            <input type="text" id="id" name="id">
+
+            <label for="nome"> Nome: </label>
+            <input type="text" id="nome" name="nome">
+
+            <label for="descricao"> Descrição </label>
+            <input type="text" id="descricao" name="descricao">
+
+            <label for="tipo">Tipo:</label>
+            <input type="text" id="tipo" name="tipo">
+
+            <label for="imagem">Link da Imagem:</label>
+            <input type="text" id="imagem" name="imagem">
+
+            <label for="habilidade">Habilidade:</label>
+            <input type="text" id="habilidade" name="habilidade">
+
+            <label for="altura">Altura:</label>
+            <input type="text" id="altura" name="altura">
+
+            <label for="peso">Peso:</label>
+            <input type="text" id="peso" name="peso">
+
+
+            <button id="cadastrar" type="submit"> Cadastrar Pokemon </button>
+
+
+
+        </form>
+
+
+
+
+
+    </section>
+
 
 </body>
 

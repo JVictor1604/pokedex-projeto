@@ -7,27 +7,51 @@
     font-family: 'Roboto', sans-serif;
 }
 
-section {
+.titulo{
+    display: flex;
+    justify-content: center; /* centraliza o texto horizontalmente */
+    align-items: center; /* centraliza as linhas verticalmente */
+    margin: 30px 0; /* 30px -> margens superior e inferior */
+ }
+ 
+ .titulo::before,
+ .titulo::after{
+    content: '';
+    position: relative;
+    height: 1px;
+    background: white;
+    min-width: 10px;
+    flex-grow: 1; 
+ }
+ 
+ .titulo span{
+    color: #fff; 
+    padding: 1 30px; 
+    font-weight: bold; 
+    font-size: 2em; 
+ }
+
+section.cards {
 
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    
 }
 
 .card-pokemon {
 
     width: 300px;
-    height: 610px;
+    height: 560px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    border: 5px solid rgb(255, 255, 255);
-    
-    
-    
-    
+    border: 3px solid white;
+    box-shadow: 15px 15px 15px #00000020;
+    padding: 1rem;
+    margin-top: 2rem;
 }
 
 .card-top {
@@ -49,12 +73,6 @@ section {
     
 }
 
-.card-mid {
-
-    
-    background-color: browns;
-    
-}
 
 .dados-center {
 
@@ -67,6 +85,61 @@ section {
 
 .text-descricao {
 
-    margin-top: 20px;
+    margin-bottom: 30px;
     margin-left: 20px;
+}
+
+section#cadastro {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5rem;
+
+}
+
+section#cadastro h2{
+
+    width: 100%;
+    text-align: center;
+    padding-bottom: 5rem;
+
+}
+
+section#cadastro form input{
+
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    outline: none;
+    margin-bottom: 1rem;
+    border: solid 3px white;
+    font-weight: bolder;
+
+}
+
+section#cadastro form{
+
+    width: 50%;
+
+}
+
+section#cadastro form button {
+
+   padding: 0.4rem;
+   width: 20%;
+   display: flex;
+   margin: 0 auto;
+   background-color: white;
+   color: blacks;
+   border: solid 3px rgb(139, 146, 241);
+   border-radius: 1rem;
+   cursor: pointer;
+}
+
+section#cadastro form button:hover {
+
+    background-color: rgb(139, 146, 241);
+    color: white;
+    border: solid 3px white;
 }

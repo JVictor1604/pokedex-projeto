@@ -1,53 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes</title>
     <link rel="stylesheet" href="/detalhes.css" type="text/css">
-    
+
 </head>
 
 <body>
-    
-    <h1>Olá</h1>
 
-<a href="/index.js/<%pokedex.id%> "> <% pokemonAtual.forEach(detalhesPokemon => { %>
+    <a href="/index.js/<%pokedex.id%>">
 
-        <div class="container-card">
+        <% pokemonAtual.forEach(detalhesPokemon=> { %>
 
-            <div class="header-card">
-
-                <span class="id"> detalhesPokemon.id </span>
-
-                <span class="number"> detalhesPokemon.número </span>
-
-            </div>
-
-            <div class="main-card">
-
-                <img src="<%=detalhesPokemon.imagem%> " alt="<%= detalhesPokemon.nome %> ">
+            <div class="container-card">
                 
-                <div class="card-name"> <%= detalhesPokemon.nome %>  </div>
-                        
-                <div class="data-card"> 
-                            
-                    <span class="altura"> <%= detalhesPokemon.altura %>  </span>  
-                            
-                    <span class="peso"> <%= detalhesPokemon.peso %>  </span>
-                
+
+                <div class="header-card">
+
+                    <span class="id"> detalhesPokemon.id </span>
+
+                    <span class="number"> detalhesPokemon.número </span>
+
+                </div>
+
+                <div class="main-card">
+
+
+                    <div class="card-name">
+                        <%= detalhesPokemon.nome %>
+                    </div>
+
+                    <img src="<%=detalhesPokemon.imagem%> " alt="<%= detalhesPokemon.nome %> ">
+
+                    
+
+                </div>
+
+                    <div class="data-card">
+
+                        <span class="altura">
+                            <%= detalhesPokemon.altura %>
+                        </span>
+
+                        <span class="peso">
+                            <%= detalhesPokemon.peso %>
+                        </span>
+
+                    </div>
+
                 </div>
 
             </div>
-            
-        </div>
 
 
-  <%    }) %>
-        
-</a>
-    
+            <% }) %>
+
+    </a>
+
 
 </body>
+
 </html>
