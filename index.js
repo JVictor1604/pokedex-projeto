@@ -12,41 +12,65 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname,"public")));
 app.use(express.urlencoded());
 
+//Rotas
+
+let pokemon = undefined;
 
 app.get("/", (req,res) => {
 
-    res.render("index",{pokedex})
-});
+    res.render("index",{pokedex, pokemon});
+})
 
-app.get("/detalhes", (req,res) => {
+app.get("/detalhes/:id", (req,res) => {
 
-    const pokemonAtual = pokedex.filter((numPokemon)=> numPokemon.id == req.params.id)
+    const id = Number(req.params.id);
+
+    pokemon = pokedex.find(pokemon => pokemon.id === id );
 
     res.render('detalhes.ejs', {
-        pokemonAtual
+        pokemon
     })
-});
+})
+
+app.post("/uptade/:id", (req,res) => {
+
+    const id = Number(req.params.id);
+
+    pokemon = pokedex.find(pokemon => pokemon.id === id );
+
+    const newPokemon = req.body;
+
+    newPokemon.id = id;
+
+    pokedex[id - 1] = newPokemon;
+    
+    pokemon = undefined;
+
+    res.redirect("/")
+})
 
 app.post("/add", (req,res) => {
 
     const adicionarPokemon = req.body;
 
+    adicionarPokemon.id = pokedex.length + 1;
+
     pokedex.push(adicionarPokemon);
 
     res.redirect("/");
 
-});
+})
 
 
 
 const pokedex = [
 
     {
-        id: "004",
+        id: 1,
 
         nome: "Charmander",
 
-        número: "4",
+        num: "4",
 
         altura: "0.6 m",
 
@@ -65,11 +89,11 @@ const pokedex = [
     },
 
     {
-        id: "468",
+        id: 2,
 
         nome: "Togekiss",
 
-        número: "468",
+        num: "468",
 
         altura: "1.5 m",
 
@@ -88,11 +112,11 @@ const pokedex = [
     },
 
     {
-        id: "025",
+        id: 3,
 
         nome: "Pikachu",
 
-        número: "25",
+        num: "25",
 
         altura: "0.4 m",
 

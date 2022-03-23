@@ -12,54 +12,100 @@
 
 <body>
 
-    <a href="/index.js/<%pokedex.id%>">
+    <h1>Ver ou editar Pokemon</h1>
 
-        <% pokemonAtual.forEach(detalhesPokemon=> { %>
-
-            <div class="container-card">
-                
-
-                <div class="header-card">
-
-                    <span class="id"> detalhesPokemon.id </span>
-
-                    <span class="number"> detalhesPokemon.número </span>
-
-                </div>
-
-                <div class="main-card">
+    <div class="container-card">
 
 
-                    <div class="card-name">
-                        <%= detalhesPokemon.nome %>
-                    </div>
+        <div class="header-card">
 
-                    <img src="<%=detalhesPokemon.imagem%> " alt="<%= detalhesPokemon.nome %> ">
+            <h3 class="id">
+             Id:   <%=pokemon.id%>
+            <h3>
 
-                    
+            <h3 class="number">
+              Num:  <%=pokemon.num%>
+            <h3>
 
-                </div>
+        </div>
 
-                    <div class="data-card">
+        <div class="divisao" >
 
-                        <span class="altura">
-                            <%= detalhesPokemon.altura %>
-                        </span>
-
-                        <span class="peso">
-                            <%= detalhesPokemon.peso %>
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
+        <div class="main-card">
 
 
-            <% }) %>
+            <h3 class="card-name">
+               Nome: <%= pokemon.nome %>
+            </h3>
 
-    </a>
+            <img src="<%=pokemon.imagem%> " alt="<%= pokemon.nome %> ">
+
+
+
+        </div>
+
+        <div class="data-card">
+            
+                <h2>Status: </h2>
+            
+               <h3> Altura: <%= pokemon.altura %> </h3>
+            
+               <h3> Peso: <%= pokemon.peso %> </h3>
+
+               <h3> Tipo: <%= pokemon.tipo %> </h3>
+            
+               <h3> Categoria: <%= pokemon.categoria %> </h3>
+            
+               <h3> Habilidade: <%= pokemon.habilidade %> </h3>
+            
+               <h3> Descrição: <%= pokemon.descricao %> </h3>
+            
+            
+
+        </div>
+
+    </div>
+
+    </div>
+
+
+    <h2>Edite seu Pokemon</h2>
+
+    <section id="atualizar-pokemon">
+
+        <form action="/uptade/<%=pokemon.id%> " method="POST">
+
+            <label for="num"> Numero: </label>
+            <input type="text" id="num" name="num" value="<%=pokemon.num%>">
+
+            <label for="nome"> Nome: </label>
+            <input type="text" id="nome" name="nome" value="<%=pokemon.nome%>">
+
+            <label for="descricao"> Descrição </label>
+            <input type="text" id="descricao" name="descricao" value="<%=pokemon.descricao%>">
+
+            <label for="tipo">Tipo:</label>
+            <input type="text" id="tipo" name="tipo" value="<%=pokemon.tipo%>">
+
+            <label for="imagem">Link da Imagem:</label>
+            <input type="text" id="imagem" name="imagem" value="<%=pokemon.imagem%>">
+
+            <label for="habilidade">Habilidade:</label>
+            <input type="text" id="habilidade" name="habilidade" value="<%=pokemon.habilidade%>">
+
+            <label for="altura">Altura:</label>
+            <input type="text" id="altura" name="altura" value="<%=pokemon.altura%>">
+
+            <label for="peso">Peso:</label>
+            <input type="text" id="peso" name="peso" value="<%=pokemon.peso%>">
+
+            <button id="cadastrar" type="submit"> Editar Pokemon </button>
+    </section>
+    </div>
+
+
+
+
 
 
 </body>
