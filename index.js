@@ -126,6 +126,8 @@ const pokedex = [
 
         habilidade: "Static",
 
+        categoria: "Mouse",
+
         descricao: "Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.",
 
         tipo: "eletric",

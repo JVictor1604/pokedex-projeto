@@ -43,24 +43,26 @@ body {
 
     height: 300px;
     width: 300px;
+    border: 4px solid white;
+    border-radius: 8x;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.main-card {
+
     display: flex;
+    flex-direction: column;
+    justify-content: auto;
+    align-items: center;
 }
 
 .card-name {
 
-    margin-left: 3rem;
     margin-top: 1rem;
 }
 
 
-.divisao {
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
 
 .data-card {
 
@@ -71,13 +73,6 @@ body {
     align-items: space-around;
     justify-content: space-around;
 }
-
-h2 {
-
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
 
 section#atualizar-pokemon form{
 
@@ -109,9 +104,9 @@ section#atualizar-pokemon form input{
 section#atualizar-pokemon form button {
 
    padding: 0.4rem;
-   width: 17%;
+   width: 20%;
    display: flex;
-   margin-left: 0 auto;
+   align-items: center;
    background-color: white;
    color: blacks;
    border: solid 3px rgb(139, 146, 241);
