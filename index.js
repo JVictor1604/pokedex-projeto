@@ -1,10 +1,11 @@
+require("dotenv").config();
 const { __express } = require("ejs");
 const { urlencoded } = require("express");
 const express = require("express");
 const path = require("path");
 const app = express();
 
-let port = 3001;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}/`));
 
